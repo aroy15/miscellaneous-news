@@ -27,21 +27,22 @@ const displayCategory = (data)=>{
 }
 // Load News as per Category
 const loadNews = (category_id)=>{
-     // Start Loading
-     toogleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
     .then(res => res.json())
     .then(data => displayNews(data.data))
     .catch(error => console.log(error));
+    // Start Loading
+     toogleSpinner(true);
+     getId('displayNews').innerHTML='';
 }
 loadNews('01')
 
 // Display News
-const displayNews = (data)=>{  
-    const showNews = getId('displayNews');
-    showNews.innerHTML='';
+const displayNews = (data)=>{    
 
+    const showNews = getId('displayNews');
+    
     getId('itemCount').innerHTML = data.length>0?data.length:'No';
 
     // sorting highest view to loest view 
