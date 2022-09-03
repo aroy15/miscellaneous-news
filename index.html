@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breaking News 24</title>
+    <title>Extreme News</title>
     <!-- Font Awesome 6.2.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS -->
@@ -18,7 +18,7 @@
             <!-- top header -->
             <div class="d-flex justify-content-between align-items-center gap-3 border-bottom border-2 border-gray">
                 <div>
-                    <a href="#" class="text-decoration-none h5">Braking News 24</a>
+                    <a href="#" class="text-decoration-none h5">Extreme News</a>
                 </div>
                 <div class="pb-3 pt-4">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -55,8 +55,8 @@
                             </div>
                         </nav>
                         <!-- item count category -->
-                        <div id="itemCount" class="px-4 py-3 rounded bg-white text-dark mb-5">
-                            <span>4 items found for category Entertainment</span>
+                        <div class="px-4 py-3 rounded bg-white text-dark mb-5">
+                            <p class="mb-0"><span id="itemCount">No</span> items found</p>
                         </div>
                         <!-- News Items -->
                         <div id="displayNews" class="d-flex flex-column gap-4">
@@ -65,7 +65,90 @@
                     </div>
                     <!-- End of News -->
                     <!-- Blog -->
-                    <div class="tab-pane fade mt-5" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium dolore consequuntur corrupti. Neque est quae tempore aperiam eligendi iure?</div>
+                    <div class="tab-pane fade mt-5" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">
+                        <h2 class="text-center mb-4 text-dark">FAQ</h2>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Difference between var let and const
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <tbody>
+                                          <tr>
+                                            <td>
+                                              <strong>var</strong>
+                                            </td>
+                                            <td>
+                                              <strong>let</strong>
+                                            </td>
+                                            <td>
+                                              <strong>const</strong>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>The scope of a <i>var </i>variable is functional scope. </td>
+                                            <td>The scope of a <i> let</i> variable is block scope. </td>
+                                            <td>The scope of a <i>const</i> variable is block scope. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>It can be updated and re-declared into the scope.</td>
+                                            <td>It can be updated but cannot be re-declared into the scope.</td>
+                                            <td>It cannot be updated or re-declared into the scope.</td>
+                                          </tr>
+                                          <tr>
+                                            <td>It can be declared without initialization.</td>
+                                            <td>It can be declared without initialization.</td>
+                                            <td>It cannot be declared without initialization.</td>
+                                          </tr>
+                                          <tr>
+                                            <td>It can be accessed without initialization as its default value is “undefined”.</td>
+                                            <td>It cannot be accessed without initialization otherwise it will give ‘referenceError’.</td>
+                                            <td>It cannot be accessed without initialization, as it cannot be declared without initialization.</td>
+                                          </tr>
+                                          <tr>
+                                            <td>hoisting done , with initializing as ‘default’ value</td>
+                                            <td>Hoisting is done , but not initialized (this is the reason for error when we access the let variable before declaration/initialization</td>
+                                            <td>Hoisting is done, but not initialized (this is the reason for error when we access the const variable before declaration/initialization</td>
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Difference between regular function and arrow function
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  <h5>1. Use of this keyword</h5>
+                                  <p>Unlike regular functions, arrow functions do not have their own <code>this</code>. The value of <code>this</code> inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of <code>this</code> in the closest non-arrow parent function.</p>
+                                  <h5 class="mt-4">2. Using new keyword</h5>
+                                  <p>Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the <code>new</code> keyword.</p>
+                                  <p>However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions. Hence, they can never be invoked with the <code>new</code>  keyword.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  Why Template String needs?
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements. For the reason we can develop website more faster.</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- End of Blog -->
                   </div>
             </div>

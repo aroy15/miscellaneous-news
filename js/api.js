@@ -25,6 +25,8 @@ const loadNews = (category_id)=>{
 loadNews('01')
 const displayNews = (data)=>{
     const showNews = getId('displayNews');
+    getId('itemCount').innerHTML = data.length>0?data.length:'No';
+   
     showNews.innerHTML='';
     data.forEach(news => {
         const {image_url, thumbnail_url, title, total_view, _id, details} = news;
@@ -68,7 +70,7 @@ const displayNews = (data)=>{
                 </div>
             </div>
         `;
-        showNews.appendChild(newsItem);        
+        showNews.appendChild(newsItem);  
     })
 }
 
