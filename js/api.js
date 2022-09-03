@@ -39,13 +39,17 @@ loadNews('01')
 
 // Display News
 const displayNews = (data)=>{  
-
     const showNews = getId('displayNews');
-    getId('itemCount').innerHTML = data.length>0?data.length:'No';
-   
     showNews.innerHTML='';
+
+    getId('itemCount').innerHTML = data.length>0?data.length:'No';
+
+    // sorting highest view to loest view 
+    data.sort((a, b) => b.total_view - a.total_view);
+
+    // append news
     data.forEach(news => {
-        const {image_url, thumbnail_url, title, total_view, _id, details} = news;
+        const {thumbnail_url, title, total_view, _id, details} = news;
         const {img, name, published_date} = news.author;
         const newsItem = document.createElement('div');
         newsItem.classList.add('news_item');
@@ -128,7 +132,7 @@ const displayNewsPopup = (data) => {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">  
-            <div class="detail_content"> 
+            <div class="detail_content px-3"> 
                 <img src=${image_url} class="w-100" alt=${title}>          
                 <h5 class="modal-title my-3 text-dark" id="detailNewsModalLabel">${title?title:'No data found'}</h5>
                 <p>${details?details:'No data found'}</p>
