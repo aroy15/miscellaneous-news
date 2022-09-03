@@ -31,6 +31,10 @@ main{
     height:50px;
     border-radius: 50%;
 }
+.detail_content{
+    height:400px;
+    overflow: auto;
+}
 @media (max-width:767px) {
     .thumbnail{
         width:100%;

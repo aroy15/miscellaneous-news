@@ -27,7 +27,7 @@ const displayNews = (data)=>{
     const showNews = getId('displayNews');
     showNews.innerHTML='';
     data.forEach(news => {
-        const {image_url, thumbnail_url, title, total_view, category_id, details} = news;
+        const {image_url, thumbnail_url, title, total_view, _id, details} = news;
         const {img, name, published_date} = news.author;
         const newsItem = document.createElement('div');
         newsItem.classList.add('news_item');
@@ -38,30 +38,30 @@ const displayNews = (data)=>{
                     <img src=${thumbnail_url} alt=${title}>
                 </div>
                 <!-- post content -->
-                <div class="p-3">
-                    <h2 class="text-dark mb-3">${title}</h2>
+                <div class="p-2 p-sm-3">
+                    <h2 class="text-dark mb-3">${title?title:'No data found'}</h2>
                     <div class="post_content">
-                        <p>${details.length > 350 ? details.slice(0,350)+'...' : details}</p>
+                        <p>${details ? (details.length > 350 ? details.slice(0,350)+'...' : details) :'No data found'}</p>
                     </div>
                     <!-- post info -->
                     <div class="d-flex justify-content-between gap-4 mt-4 align-items-center">
                         <!-- author info -->
-                        <div class="d-flex align-items-center flex-column flex-sm-row gap-2">
+                        <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-2">
                             <div class="author">
                                 <img src="${img}" alt="${name}">
                             </div>
                             <div>
-                                <p class="mb-0 text-dark">${name ? name : 'no name'}</p>
-                                <p class="mb-0">${published_date}</p>
+                                <p class="mb-0 text-dark">${name ? name : 'No data found'}</p>
+                                <p class="mb-0">${published_date? published_date : 'No data found'}</p>
                             </div>
                         </div>
                         <!-- post view -->                                        
                         <div class="d-flex align-items-center gap-2 text-dark">
                             <i class="fa-regular fa-eye"></i>
-                            <span><strong>${total_view?total_view:'0'}M</strong></span>
+                            <span><strong>${total_view?total_view:'No data found'}</strong></span>
                         </div>
                             <!-- Button trigger modal -->
-                        <a class="pointer text-primary h3 cursor-pointer" onclick="newsDetials('${category_id}')" data-bs-toggle="modal" data-bs-target="#detailNewsModal">
+                        <a class="pointer text-primary h3 cursor-pointer" onclick="loadNewsPoup('${_id}')" data-bs-toggle="modal" data-bs-target="#detailNewsModal">
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -70,5 +70,53 @@ const displayNews = (data)=>{
         `;
         showNews.appendChild(newsItem);        
     })
+}
+
+const loadNewsPoup = (news_id) =>{
+    const url =`https://openapi.programming-hero.com/api/news/${news_id}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayNewsPopup(data.data[0]))
+    .catch(error => console.log(error));
+}
+const displayNewsPopup = (data) => {
+    const showNewsPopup = getId('displayNewsPopup');
+    const {title, image_url, details,total_view}=data;
+    const {img, name, published_date} = data.author;
+    showNewsPopup.innerHTML = `
+        <div class="modal-header">
+            
+        <!-- post info -->
+        <div class="d-flex justify-content-between gap-4 mt-4 align-items-center">
+            <!-- author info -->
+            <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-2">
+                <div class="author">
+                    <img src="${img}" alt="${name}">
+                </div>
+                <div>
+                    <p class="mb-0 text-dark">${name ? name : 'No data found'}</p>
+                    <p class="mb-0">${published_date? published_date : 'No data found'}</p>
+                </div>
+            </div>
+            <!-- post view -->                                        
+            <div class="d-flex align-items-center gap-2 text-dark">
+                <i class="fa-regular fa-eye"></i>
+                <span><strong>${total_view?total_view:'No data found'}</strong></span>
+            </div>
+        </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+            <div class="detail_content"> 
+                <img src=${image_url} class="w-100" alt=${title}>          
+                <h5 class="modal-title my-3 text-dark" id="detailNewsModalLabel">${title?title:'No data found'}</h5>
+                <p>${details?details:'No data found'}</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    `
+
 }
 loadCategory();
