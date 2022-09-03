@@ -1,5 +1,14 @@
 const getId = id => document.getElementById(id);
-
+// Toggle Spinner
+const toogleSpinner = isLoading =>{
+    const loaderSection = getId('loading');
+    if(isLoading){
+        loaderSection.classList.remove('d-none');
+    }else{
+        loaderSection.classList.add('d-none');
+    }
+}
+// Load Category
 const loadCategory = ()=>{
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     fetch(url)
@@ -7,6 +16,7 @@ const loadCategory = ()=>{
     .then(data => displayCategory(data.data))
     .catch(error => console.log(error));
 }
+// display Category
 const displayCategory = (data)=>{
     const showCategroy = getId('displayCategory');
     data.news_category.forEach(item => {
@@ -15,7 +25,10 @@ const displayCategory = (data)=>{
     });    
     document.querySelector('#displayCategory .nav-link:first-child').classList.add('active')
 }
+// Load News as per Category
 const loadNews = (category_id)=>{
+     // Start Loading
+     toogleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
     .then(res => res.json())
@@ -23,7 +36,10 @@ const loadNews = (category_id)=>{
     .catch(error => console.log(error));
 }
 loadNews('01')
-const displayNews = (data)=>{
+
+// Display News
+const displayNews = (data)=>{  
+
     const showNews = getId('displayNews');
     getId('itemCount').innerHTML = data.length>0?data.length:'No';
    
@@ -72,8 +88,10 @@ const displayNews = (data)=>{
         `;
         showNews.appendChild(newsItem);  
     })
+    // Stop Loading
+    toogleSpinner(false);
 }
-
+// Load Popup
 const loadNewsPoup = (news_id) =>{
     const url =`https://openapi.programming-hero.com/api/news/${news_id}`;
     fetch(url)
@@ -81,6 +99,7 @@ const loadNewsPoup = (news_id) =>{
     .then(data => displayNewsPopup(data.data[0]))
     .catch(error => console.log(error));
 }
+// Display Poup
 const displayNewsPopup = (data) => {
     const showNewsPopup = getId('displayNewsPopup');
     const {title, image_url, details,total_view}=data;
