@@ -17,8 +17,7 @@ main{
     min-height:73vh;
 }
 .thumbnail{
-    max-width:250px;
-    width:100%;
+    min-width:250px;
 }
 .thumbnail img{
     object-fit: cover;
@@ -27,8 +26,13 @@ main{
 .pointer{
     cursor: pointer;
 }
+.author img{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
 @media (max-width:767px) {
     .thumbnail{
-        max-width:100%;
+        width:100%;
     }
 }
