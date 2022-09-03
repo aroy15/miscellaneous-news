@@ -1,5 +1,6 @@
 body{
     color:#878787;
+    background-color: #F6F6F6;
     font-weight: 500;
 }
 .navbar .nav-link{
@@ -11,4 +12,23 @@ body{
 .navbar .nav-link:hover{
     background-color: #EEEFFF;
     color:#5D5FEF;
+}
+main{
+    min-height:73vh;
+}
+.thumbnail{
+    max-width:250px;
+    width:100%;
+}
+.thumbnail img{
+    object-fit: cover;
+    width:100%;
+}
+.pointer{
+    cursor: pointer;
+}
+@media (max-width:767px) {
+    .thumbnail{
+        max-width:100%;
+    }
 }

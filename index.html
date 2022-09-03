@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breaking News</title>
+    <title>Breaking News 24</title>
+    <!-- Font Awesome 6.2.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -16,7 +18,7 @@
             <!-- top header -->
             <div class="d-flex justify-content-between align-items-center gap-3 border-bottom border-2 border-gray">
                 <div>
-                    <a href="#" class="text-decoration-none h5">Braking News</a>
+                    <a href="#" class="text-decoration-none h5">Braking News 24</a>
                 </div>
                 <div class="pb-3 pt-4">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -29,39 +31,144 @@
                       </ul>
                 </div>
             </div>
-            <!-- category header -->
-            <nav class="navbar navbar-expand-lg navbar-light mt-3 ">
-                <div class="d-flex flex-wrap w-100 justify-content-center gap-4">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                    <div class="navbar-nav gap-3" role="tablist">
-                      <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="pill">Home</a>
-                      <a class="nav-link" href="#" data-bs-toggle="pill">Features</a>
-                      <a class="nav-link" href="#" data-bs-toggle="pill">Pricing</a>
-                    </div>
-                  </div>
-                </div>
-            </nav>
         </div>
     </header>
     <!-- Main -->
     <main>
-        <section class="pt-5">
+        <section class="pb-5">
             <div class="container">
                 <!-- tab content -->
                 <div class="tab-content" id="pills-tabContent">
-                    <!-- News -->
-                    <div class="tab-pane fade show active" id="pills-news" role="tabpanel" aria-labelledby="pills-news-tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, sint?</div>
+                    <!-- News -->      
+                    <div class="tab-pane fade show active" id="pills-news" role="tabpanel" aria-labelledby="pills-news-tab">      
+                        <!-- category header -->
+                        <nav class="navbar navbar-expand-lg navbar-light mt-3 mb-5">
+                            <div class="d-flex flex-wrap w-100 justify-content-center gap-4">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                                <div class="navbar-nav gap-3" role="tablist">
+                                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="pill">Home</a>
+                                <a class="nav-link" href="#" data-bs-toggle="pill">Features</a>
+                                <a class="nav-link" href="#" data-bs-toggle="pill">Pricing</a>
+                                </div>
+                            </div>
+                            </div>
+                        </nav>
+                        <!-- item count category -->
+                        <div id="itemCount" class="px-4 py-3 rounded bg-white text-dark mb-5">
+                            <span>4 items found for category Entertainment</span>
+                        </div>
+                        <!-- News Items -->
+                        <div id="displayNews" class="d-flex flex-column gap-4">
+                            <div class="news_item bg-white d-flex flex-column flex-md-row gap-4 p-3 shadow-sm rounded align-items-center">
+                                <!-- post thumbnail -->
+                                <div class="thumbnail d-flex">
+                                    <img src="./img/image.png" alt="image">
+                                </div>
+                                <!-- post content -->
+                                <div class="p-3">
+                                    <h2 class="text-dark mb-3">The best fashion influencers to follow for sartorial inspiration</h2>
+                                    <div id="postContent">
+                                        <p>From our favourite UK influencers to the best missives from Milan and the coolest New Yorkers, read on some of the best fashion blogs out there, and for even more inspiration, do head to our separate black fashion influencer round-up.</p>
+                                        <p>Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
+                                    </div>
+                                    <!-- post info -->
+                                    <div class="d-flex justify-content-between gap-4 mt-4 align-items-center">
+                                        <!-- author info -->
+                                        <div class="d-flex align-items-center flex-column flex-sm-row gap-2">
+                                            <div class="author">
+                                                <img src="img/author.png" alt="">
+                                            </div>
+                                            <div>
+                                                <p class="mb-0 text-dark">Jane Cooper</p>
+                                                <p class="mb-0">Jan 10,2022</p>
+                                            </div>
+                                        </div>
+                                        <!-- post view -->                                        
+                                        <div class="d-flex align-items-center gap-2 text-dark">
+                                            <i class="fa-regular fa-eye"></i>
+                                            <span><strong>1.5M</strong></span>
+                                        </div>
+                                            <!-- Button trigger modal -->
+                                        <a class="pointer text-primary h3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#detailNewsModal">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news_item bg-white d-flex flex-column flex-md-row gap-4 p-3 shadow-sm rounded align-items-center">
+                                <!-- post thumbnail -->
+                                <div class="thumbnail d-flex">
+                                    <img src="./img/image.png" alt="image">
+                                </div>
+                                <!-- post content -->
+                                <div class="p-3">
+                                    <h2 class="text-dark mb-3">The best fashion influencers to follow for sartorial inspiration</h2>
+                                    <div id="postContent">
+                                        <p>From our favourite UK influencers to the best missives from Milan and the coolest New Yorkers, read on some of the best fashion blogs out there, and for even more inspiration, do head to our separate black fashion influencer round-up.</p>
+                                        <p>Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
+                                    </div>
+                                    <!-- post info -->
+                                    <div class="d-flex justify-content-between gap-4 mt-4 align-items-center">
+                                        <!-- author info -->
+                                        <div class="d-flex align-items-center flex-column flex-sm-row gap-2">
+                                            <div class="author">
+                                                <img src="img/author.png" alt="">
+                                            </div>
+                                            <div>
+                                                <p class="mb-0 text-dark">Jane Cooper</p>
+                                                <p class="mb-0">Jan 10,2022</p>
+                                            </div>
+                                        </div>
+                                        <!-- post view -->                                        
+                                        <div class="d-flex align-items-center gap-2 text-dark">
+                                            <i class="fa-regular fa-eye"></i>
+                                            <span><strong>1.5M</strong></span>
+                                        </div>
+                                            <!-- Button trigger modal -->
+                                        <a class="pointer text-primary h3 cursor-pointer" data-bs-toggle="modal" data-bs-target="#detailNewsModal">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- End of News -->
                     <!-- Blog -->
-                    <div class="tab-pane fade" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">lorem20</div>
+                    <div class="tab-pane fade mt-5" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium dolore consequuntur corrupti. Neque est quae tempore aperiam eligendi iure?</div>
                     <!-- End of Blog -->
                   </div>
             </div>
         </section>
     </main>
+    <!-- Footer -->
+    <footer class="bg-white py-4 mt-4 text-center">
+        <div class="container">
+            <p class="mb-0">Copyright 2022 Breaking News 24</p>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+    <!-- Detail Post Modal -->
+  <div class="modal fade" id="detailNewsModal" tabindex="-1" aria-labelledby="detailNewsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailNewsModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <!-- Api JS -->
