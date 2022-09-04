@@ -45,58 +45,28 @@
 				<div class="accordion" id="accordionExample">
 					<div class="accordion-item">
 						<h2 class="accordion-header" id="headingOne">
-						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<button class="accordion-button gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 							<span class="h5">Difference between var, let and const.</span>
 						</button>
 						</h2>
 						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
-							<table class="table">
-								<tbody>
-									<tr>
-									<td>
-										<strong>var</strong>
-									</td>
-									<td>
-										<strong>let</strong>
-									</td>
-									<td>
-										<strong>const</strong>
-									</td>
-									</tr>
-									<tr>
-									<td>The scope of a <i>var </i>variable is functional scope. </td>
-									<td>The scope of a <i> let</i> variable is block scope. </td>
-									<td>The scope of a <i>const</i> variable is block scope. </td>
-									</tr>
-									<tr>
-									<td>It can be updated and re-declared into the scope.</td>
-									<td>It can be updated but cannot be re-declared into the scope.</td>
-									<td>It cannot be updated or re-declared into the scope.</td>
-									</tr>
-									<tr>
-									<td>It can be declared without initialization.</td>
-									<td>It can be declared without initialization.</td>
-									<td>It cannot be declared without initialization.</td>
-									</tr>
-									<tr>
-									<td>It can be accessed without initialization as its default value is “undefined”.</td>
-									<td>It cannot be accessed without initialization otherwise it will give ‘referenceError’.</td>
-									<td>It cannot be accessed without initialization, as it cannot be declared without initialization.</td>
-									</tr>
-									<tr>
-									<td>hoisting done , with initializing as ‘default’ value</td>
-									<td>Hoisting is done , but not initialized (this is the reason for error when we access the let variable before declaration/initialization</td>
-									<td>Hoisting is done, but not initialized (this is the reason for error when we access the const variable before declaration/initialization</td>
-									</tr>
-								</tbody>
-							</table>
+							<p>A variable declaration is simply telling the computer that a variable exists and what value it should start with. Similar to other programming languages JavaScript also allows for the declaration of variables.</p>
+							<p>There are three keywords in JavaScript that can be used to declare variables: let, var, and const. Each keyword has different rules and implications for how the variables they create can be used.</p>
+							<ol class="pl-4 d-flex flex-column gap-3">
+								<li><strong class="text-purple">var:</strong> The var keyword declares a function-scoped or global variable, optionally initializing it to a value.<br>
+								Function-scoped means that the variable is only available within the function it was declared in. Global variables are available throughout your entire code.</li>
+								<li><strong class="text-purple">let:</strong> The let keyword declares a block-scoped local variable, optionally initializing it to a value. <br>
+								Block-scoped means that the variable is only available within the block it was declared in, which is usually denoted by curly braces {}.</li>
+								<li><strong class="text-purple">const:</strong> The const keyword declares a block-scoped, immutable constant variable, i.e. a variable that can’t be reassigned.<br>
+								Constants are also called “immutable variables”, but that’s a bit of a misnomer since they are actually variables – just ones that can’t be reassigned.</li>
+							</ol>
 						</div>
 						</div>
 					</div>
 					<div class="accordion-item">
 						<h2 class="accordion-header" id="headingTwo">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						<button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 							<span class="h5">Difference between regular function and arrow function.</span>
 						</button>
 						</h2>
@@ -112,7 +82,7 @@
 					</div>
 					<div class="accordion-item">
 						<h2 class="accordion-header" id="headingThree">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<button class="accordion-button collapsed gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 							<span class="h5">Why Template String needs?</span>
 						</button>
 						</h2>
