@@ -4,7 +4,9 @@ body{
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
 }
-
+.site-title{
+    font-weight: bold;
+}
 .navbar .nav-link{
     padding: 4px 10px;
     border-radius:8px;
@@ -36,6 +38,26 @@ main{
 .detail_content{
     height:400px;
     overflow: auto;
+}
+.nav_menu a{    
+    text-decoration: none;
+    font-weight: 700;
+    color:inherit
+}
+.nav_menu a.active,
+.text-purple{
+    color:#5D5FEF;
+}
+.nav_menu a::after {
+    content: '';
+    display: block;
+    width: 21px;
+    height: 2px;
+    background-color: transparent;
+    margin: auto;
+}
+.nav_menu a.active::after {
+    background-color: #5D5FEF;
 }
 @media (max-width:767px) {
     .thumbnail{

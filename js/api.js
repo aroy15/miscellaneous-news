@@ -21,30 +21,31 @@ const displayCategory = (data)=>{
     const showCategroy = getId('displayCategory');
     data.news_category.forEach(item => {
         const {category_id, category_name} = item;
-        showCategroy.innerHTML += `<a class="nav-link pointer" onclick="loadNews('${category_id}')"  data-bs-toggle="pill">${category_name}</a>`;
+        showCategroy.innerHTML += `<a class="nav-link pointer" onclick="loadNews('${category_id}','${category_name}')"  data-bs-toggle="pill">${category_name}</a>`;
     });    
     document.querySelector('#displayCategory .nav-link:first-child').classList.add('active')
 }
 // Load News as per Category
-const loadNews = (category_id)=>{
+const loadNews = (category_id,category_name)=>{
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
     .then(res => res.json())
-    .then(data => displayNews(data.data))
+    .then(data => displayNews(data.data, category_name))
     .catch(error => console.log(error));
     // Start Loading
      toogleSpinner(true);
      getId('displayNews').innerHTML='';
 }
-loadNews('01')
+loadNews('01', 'Breaking News')
 
 // Display News
-const displayNews = (data)=>{    
+const displayNews = (data,category_name)=>{    
 
     const showNews = getId('displayNews');
     
     getId('itemCount').innerHTML = data.length>0?data.length:'No';
-
+    getId('categoryName').innerHTML = category_name;
+    
     // sorting highest view to loest view 
     data.sort((a, b) => b.total_view - a.total_view);
 
